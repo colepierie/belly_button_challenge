@@ -1,13 +1,13 @@
-// Creating function for Data plotting (Bar, gauge, bubble)
+// Creating function
 function getPlot(id) {
-    // getting data from the json file
+    // gather data 
     d3.json("Data/samples.json").then((data)=> {
         console.log(data)
   
         var wfreq = data.metadata.map(d => d.wfreq)
         console.log(`Washing Freq: ${wfreq}`)
         
-        // filter sample values by id 
+        // filter values 
         var samples = data.samples.filter(s => s.id.toString() === id)[0];
         
         console.log(samples);
